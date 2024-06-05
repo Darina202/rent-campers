@@ -1,10 +1,4 @@
-import { requestFetchCamper } from 'api/campers-api';
-import BookingForm from './BookingForm/BookingForm';
-import CamperCard from './CamperCard/CamperCard';
-import CamperList from './CamperList/CamperList';
 import MainMenu from './MainMenu/MainMenu';
-import Reviews from './Reviews/Reviews';
-
 import { Route, Routes } from 'react-router-dom';
 import HomePage from 'pages/HomePage/HomePage';
 import CatalogPage from 'pages/CatalogPage/CatalogPage';
@@ -17,11 +11,6 @@ export const App = () => {
     <div>
       <MainMenu />
       <Container>
-        {/* <BookingForm />
-      <CamperCard />
-      <CamperList />
-      <Reviews /> */}
-
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />

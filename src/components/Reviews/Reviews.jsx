@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './reviews.module.css';
-import { useParams } from 'react-router-dom';
-import { requestFetchCamper } from 'api/campers-api';
+// import { useParams } from 'react-router-dom';
+// import { requestFetchCamper } from 'api/campers-api';
 
 const Reviews = () => {
   let item;
   const [review, setReview] = useState([]);
-
+  console.log(setReview);
   // useEffect(() => {
   //   const fetchCamper = async () => {
   //     const review = await requestFetchCamper();

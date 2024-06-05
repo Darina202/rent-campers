@@ -1,7 +1,7 @@
-import { requestFetchCamper } from 'api/campers-api';
+// import { requestFetchCamper } from 'api/campers-api';
 import styles from './camper-list.module.css';
 import CamperListItem from '../CamperListItem/CamperListItem';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllCampers } from '../../redux/campers/campers-selectors';
 import { fetchCamper } from '../../redux/campers/campers-operations';
