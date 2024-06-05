@@ -1,39 +1,31 @@
 import { useState } from 'react';
 import styles from './reviews.module.css';
-// import { useParams } from 'react-router-dom';
-// import { requestFetchCamper } from 'api/campers-api';
+import { useSelector } from 'react-redux';
+import { selectAllCampers } from '../../redux/campers/campers-selectors';
 
-const Reviews = () => {
-  let item;
+const Reviews = ({ reviews }) => {
+  const { isLoading, error } = useSelector(selectAllCampers);
   const [review, setReview] = useState([]);
-  console.log(setReview);
-  // useEffect(() => {
-  //   const fetchCamper = async () => {
-  //     const review = await requestFetchCamper();
-  //     setReview(review);
-  //   };
+  console.log(reviews);
 
-  //   fetchCamper();
-  // }, []);
+  // if (reviews?.length > 0) {
+  //   return (
 
-  // const review = [];
-
-  if (review?.length > 0) {
-    return (item = review.map(
-      ({ reviews }, index) => console.log(reviews)
-      // <li key={index} className={styles.item}>
-      //   <h3 className={styles.author}>{reviews.reviewer_name}</h3>
-      //   <p>{reviews.reviewer_rating}</p>
-      //   <p className={styles.comment}>{reviews.comment}</p>
-      // </li>
-    ));
-  }
+  const item = reviews.map(
+    ({ reviewer_name, reviewer_rating, comment }, index) => {
+      <li key={index} className={styles.item}>
+        <h3 className={styles.author}>{reviewer_name}</h3>
+        <p>{reviewer_rating}</p>
+        <p className={styles.comment}>{comment}</p>
+      </li>;
+    }
+  );
 
   return (
     <>
-      {/* {error && <p>Error {error}</p>}
-      {loading && <p>...Loading</p>} */}
-      {review?.length > 0 ? (
+      {error && <p>Error {error}</p>}
+      {isLoading && <p>...Loading</p>}
+      {reviews?.length > 0 ? (
         <ul className={styles.list}>{item}</ul>
       ) : (
         <h3 className={styles.text}>

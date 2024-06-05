@@ -79,7 +79,7 @@ const BookingForm = ({ onSubmit }) => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className={styles.btn}>
+        <button type="submit" className={styles.button}>
           Send
         </button>
       </form>
