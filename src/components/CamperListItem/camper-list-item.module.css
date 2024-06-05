@@ -1,5 +1,5 @@
 .card {
-  width: 890px;
+  width: 842px;
   padding: 24px;
   border: 1px solid var(--border-line);
   border-radius: 20px;
@@ -25,28 +25,114 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-
-  /* font-family: $font-family; */
   font-weight: 600;
   font-size: 24px;
   line-height: 125%;
 }
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.likeBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.like {
+  width: 24px;
+  height: 24px;
+  fill: transparent;
+  stroke: var(--main);
+}
+
 .rate {
   display: flex;
   gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
 }
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.rateText {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+.starIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--rating);
+}
+.locationIcon {
+  width: 16px;
+  height: 16px;
+  fill: transparent;
+  stroke: var(--main);
+}
+
 .desc {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 150%;
   margin: 24px 0;
 }
 
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  line-height: 1.25;
+  background-color: var(--block-features);
+  border-radius: 100px;
+  padding: 12px 16px;
+}
+
+.icon {
+  fill: var(--main);
+  stroke: transparent;
+  height: 20px;
+  width: 20px;
+}
+
+.transIcon {
+  fill: transparent;
+  stroke: var(--main);
+  height: 20px;
+  width: 20px;
+}
+
+.text {
+  text-transform: capitalize;
+}
+
 .button {
-  margin-top: 24px;
   background-color: var(--light-red);
   border: none;
   border-radius: 200px;
   padding: 16px 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
   color: #fff;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--dark-red);
 }

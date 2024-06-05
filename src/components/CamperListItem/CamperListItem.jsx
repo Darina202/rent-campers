@@ -1,4 +1,5 @@
 import styles from './camper-list-item.module.css';
+import icons from '../../img/icons.svg';
 
 const CamperListItem = ({
   name,
@@ -8,18 +9,12 @@ const CamperListItem = ({
   description,
   details,
   gallery,
+  adults,
+  transmission,
+  engine,
+  reviews,
 }) => {
-  // const detList = details.forEach(element => {
-  //   console.log(element);
-  //   <li>
-  //     <svg class="advanced-icon" width="64" height="64">
-  //       <use href="./images/icons.svg#icon-alcove"></use>
-  //     </svg>
-  //   </li>;
-  // });
-
-  console.log(gallery);
-
+  console.log(details);
   return (
     <div className={styles.card}>
       <li className={styles.item}>
@@ -28,17 +23,77 @@ const CamperListItem = ({
         </div>
         <div className={styles.info}>
           <div className={styles.title}>
-            <h3>{name}</h3>
-            <p>{price}</p>
+            <p>{name}</p>
+            <div className={styles.price}>
+              <p>{`€${price}`}</p>
+              <button className={styles.likeBtn}>
+                <svg
+                  className={styles.like}
+                  // onClick={toggleFavoriteProducts}
+                  // className={`${scss.likeIcon} ${
+                  //   isDublicateProduct && scss.likeIconPressed
+                  // }`}
+                >
+                  <use href={`${icons}#icon-like`}></use>
+                </svg>
+              </button>
+            </div>
           </div>
           <div className={styles.rate}>
-            <p>{rating}</p>
-            <p>{location}</p>
+            <div className={styles.rating}>
+              <svg className={styles.starIcon}>
+                <use href={`${icons}#icon-star`}></use>
+              </svg>
+              <p
+                className={styles.rateText}
+              >{`${rating}(${reviews.length} Reviews)`}</p>
+            </div>
+            <div className={styles.rating}>
+              <svg className={styles.locationIcon}>
+                <use href={`${icons}#icon-location`}></use>
+              </svg>
+              <p>{location}</p>
+            </div>
           </div>
           <p className={styles.desc}>{description}</p>
-          {/* <ul>{detList}</ul> */}
-          {/* <span className={status}>{isOnline}</span>
-        <img className={styles.avatar} src={avatar} alt={name} width="48" /> */}
+          <ul className={styles.categoryList}>
+            <li className={styles.categoryItem}>
+              <svg className={styles.icon}>
+                <use href={`${icons}#icon-users`}></use>
+              </svg>
+              {`${adults} adults`}
+            </li>
+            <li className={styles.categoryItem}>
+              <svg className={styles.transIcon}>
+                <use href={`${icons}#icon-automatic`}></use>
+              </svg>
+              <p className={styles.text}>{transmission}</p>
+            </li>
+            <li className={styles.categoryItem}>
+              <svg className={styles.icon}>
+                <use href={`${icons}#icon-petrol`}></use>
+              </svg>
+              <p className={styles.text}>{engine}</p>
+            </li>
+            <li className={styles.categoryItem}>
+              <svg className={styles.transIcon}>
+                <use href={`${icons}#icon-kitchen`}></use>
+              </svg>
+              <p className={styles.text}>kitchen</p>
+            </li>
+            <li className={styles.categoryItem}>
+              <svg className={styles.transIcon}>
+                <use href={`${icons}#icon-bed`}></use>
+              </svg>
+              {`${details.beds} beds`}
+            </li>
+            <li className={styles.categoryItem}>
+              <svg className={styles.icon}>
+                <use href={`${icons}#icon-ac`}></use>
+              </svg>
+              <p className={styles.text}>AC</p>
+            </li>
+          </ul>
           <button type="button" className={styles.button}>
             Show more
           </button>

@@ -4,8 +4,13 @@ const camperInstance = axios.create({
   baseURL: 'https://65d38a55522627d501091c9b.mockapi.io/api/adverts',
 });
 
-export const requestFetchCamper = async () => {
-  const { data } = await camperInstance.get('/');
+export const requestFetchCamper = async (page = 1) => {
+  const { data } = await camperInstance.get('/', {
+    params: {
+      page,
+      limit: 4,
+    },
+  });
   return data;
 };
 

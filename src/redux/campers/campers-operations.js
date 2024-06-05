@@ -3,9 +3,9 @@ import { requestFetchCamper } from 'api/campers-api';
 
 export const fetchCamper = createAsyncThunk(
   'campers/fetchAll',
-  async (_, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
-      const data = await requestFetchCamper();
+      const data = await requestFetchCamper(page);
       return data;
     } catch (error) {
       console.log(error);
