@@ -1,6 +1,7 @@
 import styles from './reviews.module.css';
 import { useSelector } from 'react-redux';
 import { selectAllCampers } from '../../redux/campers/campers-selectors';
+import BookingForm from 'components/BookingForm/BookingForm';
 
 const Reviews = ({ reviews }) => {
   const { isLoading, error } = useSelector(selectAllCampers);
@@ -21,13 +22,16 @@ const Reviews = ({ reviews }) => {
     <>
       {error && <p>Error {error}</p>}
       {isLoading && <p>...Loading</p>}
-      {reviews?.length > 0 ? (
-        <ul className={styles.list}>{item}</ul>
-      ) : (
-        <h3 className={styles.text}>
-          We don`t have any reviews for this camper
-        </h3>
-      )}
+      <div className={styles.container}>
+        {reviews?.length > 0 ? (
+          <ul className={styles.list}>{item}</ul>
+        ) : (
+          <h3 className={styles.text}>
+            We don`t have any reviews for this camper
+          </h3>
+        )}
+        <BookingForm />
+      </div>
     </>
   );
 };

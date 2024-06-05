@@ -1,31 +1,46 @@
 import styles from './add-desc.module.css';
-// import icons from '../../../img/icons.svg';
-import BookingForm from 'components/BookingForm/BookingForm';
 import Reviews from '../../Reviews/Reviews';
+import Features from '../../Features/Features';
+import { useState } from 'react';
 
 const AddDesc = ({ camper }) => {
-  const {
-    // details,
-    // adults,
-    // children,
-    // transmission,
-    // form,
-    // engine,
-    // length,
-    // width,
-    // height,
-    // tank,
-    // consumption,
-    reviews,
-  } = camper;
-  console.log(camper);
+  const { reviews } = camper;
+  const [activeSection, setActiveSection] = useState(null);
+
+  const handleFeaturesClick = () => {
+    setActiveSection('features');
+  };
+
+  const handleReviewsClick = () => {
+    setActiveSection('reviews');
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles.leftSide}>
-        <Reviews reviews={reviews} />
+    <>
+      <div className={styles.addDescBtn}>
+        <button
+          className={`${styles.addDescLink} ${
+            activeSection === 'features' ? styles.activeButton : ''
+          }`}
+          onClick={handleFeaturesClick}
+        >
+          Features
+        </button>
+        <button
+          className={`${styles.addDescLink} ${
+            activeSection === 'reviews' ? styles.activeButton : ''
+          }`}
+          onClick={handleReviewsClick}
+        >
+          Reviews
+        </button>
       </div>
-      <BookingForm />
-    </div>
+
+      <>
+        {activeSection === 'features' && <Features camper={camper} />}
+        {activeSection === 'reviews' && <Reviews reviews={reviews} />}
+      </>
+    </>
   );
 };
 export default AddDesc;

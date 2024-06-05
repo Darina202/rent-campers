@@ -33,7 +33,7 @@ const BookingForm = ({ onSubmit }) => {
   const { name, email, bookingDate, comment } = state;
 
   return (
-    <div>
+    <div className={styles.booking}>
       <h2>Book your campervan now</h2>
       <p>Stay connected! We are always ready to help you.</p>
       <form className={styles.form} onSubmit={handleSubmit}>

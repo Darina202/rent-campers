@@ -10,6 +10,9 @@
   border: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+  height: 720px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 /* .modal {
   position: relative;
@@ -28,6 +31,8 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.75);
+
+  z-index: 999;
 }
 /* .overlay {
   position: fixed;
@@ -39,9 +44,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5) !important;
-  overflow: hidden;
-  overflow-y: auto;
-  z-index: 999;
+  
 } */
 
 .close {
