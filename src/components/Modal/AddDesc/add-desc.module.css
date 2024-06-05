@@ -1,5 +1,10 @@
 .container {
   display: flex;
+  gap: 24px;
+}
+
+.leftSide {
+  width: calc((982px - 24px) / 2);
 }
 
 .categoryList {

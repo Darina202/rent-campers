@@ -21,8 +21,9 @@ const AddDesc = ({ camper }) => {
   console.log(camper);
   return (
     <div className={styles.container}>
-      <Reviews reviews={reviews} />
-      <div></div>
+      <div className={styles.leftSide}>
+        <Reviews reviews={reviews} />
+      </div>
       <BookingForm />
     </div>
   );
