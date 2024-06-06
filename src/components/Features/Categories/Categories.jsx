@@ -2,17 +2,7 @@ import styles from './categories.module.css';
 import icons from '../../../img/icons.svg';
 
 const Categories = ({ details, adults, transmission, engine }) => {
-  const keys = Object.keys(details);
-  const { airConditioner, CD, radio, hob } = details;
-  // const items = details.map(detail => {
-
-  // });
-
-  const entries = Object.entries(details);
-
-  const items = entries.map(([key, value]) => {
-    return { key, value };
-  });
+  const { airConditioner, hob } = details;
 
   return (
     <div className={styles.container}>
