@@ -2,8 +2,13 @@ import styles from './filter-bar.module.css';
 import icons from '../../img/icons.svg';
 import Equip from './Equip/Equip.jsx';
 import VehicleType from './VehicleType/VehicleType';
+import { changeFitler } from '../../redux/filter-slice';
+import { useDispatch } from 'react-redux';
 
 const FilterBar = () => {
+  const dispatch = useDispatch();
+  const toChangeFitler = ({ target }) => dispatch(changeFitler(target.value));
+
   return (
     <form>
       <div className={styles.container}>
@@ -15,6 +20,7 @@ const FilterBar = () => {
               id="location"
               className={styles.locInput}
               placeholder="Kyiv, Ukraine"
+              onChange={toChangeFitler}
             />
             <svg className={styles.locIcon}>
               <use href={`${icons}#icon-location`}></use>

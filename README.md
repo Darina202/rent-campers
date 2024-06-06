@@ -1,71 +1,78 @@
-# Camper Rental Application
+# AdventureCampers. Rent your camper!
 
-This application is created for a company that provides camper rental services
-in Ukraine. The application consists of three main pages:
+## Project Description
 
-1. **Home Page**: A general description of the services provided by the company.
-2. **Catalog Page**: A catalog of campers of various configurations that users
-   can filter by location, equipment, and type.
-3. **Favorites Page**: A list of ads added by the user to their favorites.
+This application is for a company that rents camper vans in Ukraine. The app
+allows users to easily search, browse and book campers for unforgettable trips.
 
-The user interface includes navigation (styled at your discretion) and a viewing
-area.
+## Features
 
-## Technical Requirements
+### Homepage
 
-The application should be implemented as per the design and specifications
-provided.
+- A brief description of the company's services.
 
-### Functional Requirements
+### Camper Catalog
 
-1. **Ad Card Implementation**:
+- View campers of various configurations.
+- "Load more" button to display additional ads.
+- Add ads to favorites using the heart-shaped button.
+- Saving selected ads after reloading the page.
+- A modal window with detailed information about the camper and the booking
+  form.
 
-   - Each camper rental ad card should be implemented according to the provided
-     design.
+### Favorite Ads Page
 
-2. **Catalog Page**:
+- View ads added to your favorites.
+- Remove ads from favorites.
 
-   - The first page of the catalog should render 4 ads initially.
-   - Additional ads should be loaded upon clicking the "Load more" button.
+## Technical Details
 
-3. **Favorite Ads**:
+### Routing (React Router)
 
-   - Clicking the heart-shaped button on an ad card should add the ad to the
-     favorites list and change the color of the button.
-   - The user's favorite ads should persist across page reloads. If an ad is
-     added to favorites and the page is refreshed, the ad should still be marked
-     as a favorite.
-   - Clicking the heart-shaped button again should remove the ad from the
-     favorites list and revert the button color to its initial state.
+- `/` - homepage.
+- `/catalog` - camper catalog.
+- `/favorites` - favorite ads page.
+- Redirect to the homepage for non-existent routes.
 
-4. **Modal Window**:
+### Ad Management
 
-   - Clicking the "Show more" button should open a modal window with detailed
-     information about the camper.
-   - The modal window should close when the close button (in the form of an
-     “x”), the backdrop, or the Esc key is pressed.
+- Use [mockapi.io](https://mockapi.io/) for backend.
+- Pagination: 4 ads per page.
 
-5. **Tabs in Modal Window**:
+## Requirements
 
-   - The modal window should display information about the camper’s features and
-     reviews. The displayed information should depend on the active tab.
-   - The modal window also contains a booking form with fields for name, email,
-     booking date, and comment. The name, email, and booking date fields are
-     mandatory and should be validated for correct input. The form should not be
-     submitted if the data is invalid. If the form is valid, the page should
-     refresh upon submission.
+- Displaying ad cards according to design.
+- Saving the state of the "Favorites" buttons after reloading the page.
+- Modal window with detailed information about the camper:
+- Opening by clicking on the "Details" button.
+- Closing by clicking on the close button, clicking on the background or
+  pressing the Esc key.
+- Camper information and reviews with dynamic tab switching.
+- Reservation form with mandatory fields: name, e-mail, reservation date.
+- Validation of the form: the form is not sent with incorrect data, the page is
+  reloaded upon successful submission.
+- Displaying the rental price in whole numbers.
 
-6. **Price Format**:
-   - The rental price should be set as a single value (e.g., 8000). In the UI,
-     it should be displayed with a comma (e.g., 8000,00).
+## Running the Project
 
-### Routing
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Darina202/rent-campers.git
+   ```
+2. Install dependencies:
+   ```sh
+   cd CamperWave
+   npm install
+   ```
+3. Start the local server:
+   ```sh
+   npm start
+   ```
+4. Open in your browser: `http://localhost:3000`
 
-The application should use React Router for routing. The routes are:
+## Technologies Used
 
-- `/`: Home page with a general description of the company’s services.
-- `/catalog`: Page containing the catalog of campers.
-- `/favorites`: Page with ads added by the user to favorites.
-
-If the user navigates to a route that does not exist, they should be redirected
-to the home page.
+- React
+- React Router
+- mockapi.io
+- SCSS for styling
