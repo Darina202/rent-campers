@@ -4,7 +4,6 @@ import icons from '../../../img/icons.svg';
 const MainDesc = ({ camper }) => {
   const { name, rating, price, location, description, gallery, reviews } =
     camper;
-  console.log(camper);
   return (
     <div className={styles.container}>
       <div>

@@ -1,5 +1,6 @@
-import { useId, useState } from 'react';
+import { useState } from 'react';
 import styles from './booking-form.module.css';
+import icons from '../../img/icons.svg';
 
 const INITIAL_STATE = {
   name: '',
@@ -8,7 +9,7 @@ const INITIAL_STATE = {
   comment: '',
 };
 
-const BookingForm = ({ onSubmit }) => {
+const BookingForm = () => {
   const [state, setState] = useState({ ...INITIAL_STATE });
 
   const handleChange = ({ target }) => {
@@ -21,61 +22,62 @@ const BookingForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({ ...state });
-    setState({ ...INITIAL_STATE });
+    if (e.target.checkValidity()) {
+      setState({ ...INITIAL_STATE });
+    }
   };
-
-  const nameId = useId();
-  const emailId = useId();
-  const dateId = useId();
-  const commemtId = useId();
 
   const { name, email, bookingDate, comment } = state;
 
   return (
     <div className={styles.booking}>
-      <h2>Book your campervan now</h2>
-      <p>Stay connected! We are always ready to help you.</p>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <h2 className={styles.title}>Book your campervan now</h2>
+      <p className={styles.text}>
+        Stay connected! We are always ready to help you.
+      </p>
+      <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <div className={styles.field}>
-          <label htmlFor="nameId">Name</label>
           <input
+            className={styles.input}
             value={name}
             name="name"
-            id={nameId}
+            placeholder="Name"
             onChange={handleChange}
             required
           />
         </div>
         <div className={styles.field}>
-          <label htmlFor="emailId">Email</label>
           <input
+            className={styles.input}
             value={email}
             type="email"
             name="email"
-            id={emailId}
+            placeholder="Email"
             onChange={handleChange}
             required
           />
         </div>
         <div className={styles.field}>
-          <label htmlFor="passwordId">Booking date</label>
           <input
+            className={styles.input}
             value={bookingDate}
             type="date"
             name="bookingDate"
-            id={dateId}
+            placeholder="Booking date"
             onChange={handleChange}
             required
           />
+          <svg className={styles.calIcon}>
+            <use href={`${icons}#icon-calendar`}></use>
+          </svg>
         </div>
         <div className={styles.field}>
-          <label htmlFor="passwordId">Comment</label>
           <input
+            className={styles.input}
             value={comment}
             type="text"
             name="comment"
-            id={commemtId}
+            placeholder="Comment"
             onChange={handleChange}
           />
         </div>
