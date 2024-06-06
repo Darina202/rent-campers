@@ -6,7 +6,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
   list-style-type: none;
   width: calc((902px - 24px) / 2);
 }
@@ -15,8 +15,44 @@
   margin-bottom: 20px;
 }
 .author {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
 }
-.text {
-  text-align: center;
+
+.head {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.comment {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}
+.round {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--block-features);
+  position: relative;
+}
+.letter {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  text-transform: capitalize;
+  color: var(--light-red);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.starIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--rating);
 }
