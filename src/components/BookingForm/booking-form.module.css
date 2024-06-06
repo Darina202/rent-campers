@@ -29,8 +29,6 @@
   align-items: center;
   gap: 20px;
   border-radius: 10px;
-  /* width: 400px;
-  height: 56px; */
   background-color: var(--inputs);
   width: 100%;
 }

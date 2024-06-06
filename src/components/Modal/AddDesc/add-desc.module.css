@@ -19,7 +19,7 @@
   cursor: pointer;
   padding: 0;
   position: relative;
-  padding-bottom: 24px; /* Завжди зберігає висоту */
+  padding-bottom: 24px;
 }
 
 .addDescLink::after {

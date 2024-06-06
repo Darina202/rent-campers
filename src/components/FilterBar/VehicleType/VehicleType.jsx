@@ -1,5 +1,4 @@
 import styles from './vehicle-type.module.css';
-// import equip from './equipments.json';
 import icons from '../../../img/icons.svg';
 
 const VehicleType = () => {

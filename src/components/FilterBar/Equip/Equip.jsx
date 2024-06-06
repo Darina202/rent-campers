@@ -1,5 +1,4 @@
 import styles from './equip.module.css';
-// import equip from './equipments.json';
 import icons from '../../../img/icons.svg';
 
 const Equip = () => {
