@@ -2,6 +2,18 @@ import styles from './categories.module.css';
 import icons from '../../../img/icons.svg';
 
 const Categories = ({ details, adults, transmission, engine }) => {
+  const keys = Object.keys(details);
+  const { airConditioner, CD, radio, hob } = details;
+  // const items = details.map(detail => {
+
+  // });
+
+  const entries = Object.entries(details);
+
+  const items = entries.map(([key, value]) => {
+    return { key, value };
+  });
+
   return (
     <div className={styles.container}>
       <ul className={styles.categoryList}>
@@ -16,6 +28,12 @@ const Categories = ({ details, adults, transmission, engine }) => {
             <use href={`${icons}#icon-automatic`}></use>
           </svg>
           <p className={styles.text}>{transmission}</p>
+        </li>
+        <li className={styles.categoryItem}>
+          <svg className={styles.icon}>
+            <use href={`${icons}#icon-ac`}></use>
+          </svg>
+          <p className={styles.text}>AC</p>
         </li>
         <li className={styles.categoryItem}>
           <svg className={styles.icon}>
@@ -36,10 +54,28 @@ const Categories = ({ details, adults, transmission, engine }) => {
           {`${details.beds} beds`}
         </li>
         <li className={styles.categoryItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-ac`}></use>
+          <svg className={styles.transIcon}>
+            <use href={`${icons}#icon-conditioner`}></use>
           </svg>
-          <p className={styles.text}>AC</p>
+          {`${airConditioner} air conditioner`}
+        </li>
+        <li className={styles.categoryItem}>
+          <svg className={styles.transIcon}>
+            <use href={`${icons}#icon-cd`}></use>
+          </svg>
+          <p className={styles.text}>CD</p>
+        </li>
+        <li className={styles.categoryItem}>
+          <svg className={styles.transIcon}>
+            <use href={`${icons}#icon-radio`}></use>
+          </svg>
+          <p className={styles.text}>Radio</p>
+        </li>
+        <li className={styles.categoryItem}>
+          <svg className={styles.transIcon}>
+            <use href={`${icons}#icon-hob`}></use>
+          </svg>
+          {`${hob} hob`}
         </li>
       </ul>
     </div>
