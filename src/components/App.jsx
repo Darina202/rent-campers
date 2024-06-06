@@ -10,31 +10,14 @@ export const App = () => {
   return (
     <div>
       <MainMenu />
-      <Container>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/favorites" element={<CamperPage />} />
-          {/* <Route path="/catalog/:camperId" element={<OneMoviePage />}>
-          <Route path="features" element={<MainMenu />} />
-          <Route path="reviews" element={<MainMenu />} />
-        </Route> */}
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-
-        {/* <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={< />} />
-          <Route path="/favorites" element={< />} />
-          <Route path="/catalog/:camperId" element={<OneMoviePage />}>
-            <Route path="features" element={<MainMenu />} />
-            <Route path="reviews" element={<MainMenu />} />
-          </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense> */}
-      </Container>
+      {/* <Container> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/favorites" element={<CamperPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      {/* </Container> */}
     </div>
   );
 };

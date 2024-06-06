@@ -1,19 +1,21 @@
 .menu {
   display: flex;
   gap: 28px;
-  padding: 16px 100px;
+  padding: 32px 64px;
   list-style-type: none;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  background-color: var(--inputs);
 }
 
 .link {
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  color: #000;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--main);
 }
 
 .link:global(.active) {
-  color: blue;
+  color: var(--dark-red);
 }

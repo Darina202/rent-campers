@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import Container from '../../components/Container/Container';
 
 const CamperPage = () => {
   return (
-    <div>
+    <Container>
       <ul>
         <li>
           <Link to="features">Features</Link>
@@ -11,7 +12,7 @@ const CamperPage = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-    </div>
+    </Container>
   );
 };
 export default CamperPage;

@@ -1,0 +1,36 @@
+/* .home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  padding: 40px;
+} */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 40%; /* Adjust as necessary */
+  height: 30vh; /* Adjust as necessary */
+  margin: 150px auto; /* Center horizontally */
+  padding: 32px;
+  border-radius: 20px; /* Optional: add some rounding to the corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+}
+
+.title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 125%;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--text);
+}
