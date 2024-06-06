@@ -61,7 +61,6 @@ allows users to easily search, browse and book campers for unforgettable trips.
    ```
 2. Install dependencies:
    ```sh
-   cd CamperWave
    npm install
    ```
 3. Start the local server:
