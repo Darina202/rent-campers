@@ -1,21 +1,41 @@
 import styles from './camper-list-item.module.css';
 import icons from '../../img/icons.svg';
+import { selectFavoriteCampers } from '../../redux/favorite/favorite-selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addCamperToFavorite,
+  deleteCamperFromFavorite,
+} from '../../redux/favorite/favorite-slice';
 
-const CamperListItem = ({
-  _id,
-  name,
-  rating,
-  price,
-  location,
-  description,
-  details,
-  gallery,
-  adults,
-  transmission,
-  engine,
-  reviews,
-  onClick,
-}) => {
+const CamperListItem = ({ item, onClick }) => {
+  const {
+    _id,
+    name,
+    rating,
+    price,
+    location,
+    description,
+    details,
+    gallery,
+    adults,
+    transmission,
+    engine,
+    reviews,
+  } = item;
+
+  const favoriteCampers = useSelector(selectFavoriteCampers);
+  const dispatch = useDispatch();
+
+  const isCamper = favoriteCampers.some(({ _id }) => _id === item._id);
+
+  const toggleFavoriteCamper = () => {
+    if (!isCamper) {
+      dispatch(addCamperToFavorite(item));
+    } else {
+      dispatch(deleteCamperFromFavorite(_id));
+    }
+  };
+
   return (
     <div className={styles.card}>
       <li className={styles.item}>
@@ -29,11 +49,10 @@ const CamperListItem = ({
               <p>{`€${price}`}</p>
               <button className={styles.likeBtn}>
                 <svg
-                  className={styles.like}
-                  // onClick={toggleFavoriteProducts}
-                  // className={`${scss.likeIcon} ${
-                  //   isDublicateProduct && scss.likeIconPressed
-                  // }`}
+                  onClick={toggleFavoriteCamper}
+                  className={`${styles.like} ${
+                    isCamper ? styles.likeActiv : ''
+                  }`}
                 >
                   <use href={`${icons}#icon-like`}></use>
                 </svg>

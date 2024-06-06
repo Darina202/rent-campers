@@ -40,7 +40,7 @@ const CamperList = () => {
   const elements = items.map(item => (
     <CamperListItem
       key={item._id}
-      {...item}
+      item={item}
       onClick={() => handleItemClick(item._id)}
     />
   ));

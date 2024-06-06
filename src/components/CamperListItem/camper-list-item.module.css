@@ -51,6 +51,11 @@
   stroke: var(--main);
 }
 
+.likeActiv {
+  fill: var(--light-red);
+  stroke: var(--light-red);
+}
+
 .rate {
   display: flex;
   gap: 16px;
