@@ -44,9 +44,9 @@ const CamperListItem = ({ item, onClick }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.title}>
-            <p>{name}</p>
+            <h4>{name}</h4>
             <div className={styles.price}>
-              <p>{`€${price}`}</p>
+              <p>{`€${price.toFixed(2)}`}</p>
               <button className={styles.likeBtn}>
                 <svg
                   onClick={toggleFavoriteCamper}

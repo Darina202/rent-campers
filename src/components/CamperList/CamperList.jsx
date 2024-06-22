@@ -18,7 +18,9 @@ const CamperList = () => {
   }, [dispatch, page]);
 
   useEffect(() => {
-    if (page > Math.ceil(items.length / 4)) {
+    if (page > Math.ceil(items?.length / 4)) {
+      console.log(page);
+      console.log(Math.ceil(items?.length / 4));
       setHiddenBtn(false);
     } else {
       setHiddenBtn(true);

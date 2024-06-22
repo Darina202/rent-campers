@@ -23,7 +23,7 @@
 }
 
 .loadBtn:hover {
-  border: 2px solid rgba(71, 84, 103, 0.6);
-  background-color: var(--block-features);
+  border: 1px solid var(--light-red);
+  /* background-color: var(--block-features); */
   cursor: pointer;
 }

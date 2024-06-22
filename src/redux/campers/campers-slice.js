@@ -20,6 +20,11 @@ const handleRejected = (state, { payload }) => {
 const camperSlice = createSlice({
   name: 'campers',
   initialState,
+  reducers: {
+    resetCampers: state => {
+      state.items = [];
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchCamper.pending, handlePending)
@@ -32,5 +37,7 @@ const camperSlice = createSlice({
       .addCase(fetchCamper.rejected, handleRejected);
   },
 });
+
+export const { resetCampers } = camperSlice.actions;
 
 export const camperReducer = camperSlice.reducer;

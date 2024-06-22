@@ -24,7 +24,7 @@ const MainDesc = ({ camper }) => {
             <p>{location}</p>
           </div>
         </div>
-        <p className={styles.price}>{`€${price}`}</p>
+        <p className={styles.price}>{`€${price.toFixed(2)}`}</p>
       </div>
 
       <ul className={styles.gallery}>

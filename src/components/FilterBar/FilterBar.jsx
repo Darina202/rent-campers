@@ -19,7 +19,7 @@ const FilterBar = () => {
               name="location"
               id="location"
               className={styles.locInput}
-              placeholder="Kyiv, Ukraine"
+              placeholder="City"
               onChange={toChangeFitler}
             />
             <svg className={styles.locIcon}>

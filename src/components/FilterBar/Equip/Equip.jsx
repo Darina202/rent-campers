@@ -55,7 +55,7 @@ const Equip = () => {
 
   return (
     <div>
-      <p className={styles.title}>Vehicle equipment</p>
+      <h5 className={styles.title}>Vehicle equipment</h5>
       <ul className={styles.equipList}>{elements}</ul>
     </div>
   );
