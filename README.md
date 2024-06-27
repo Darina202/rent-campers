@@ -74,4 +74,4 @@ allows users to easily search, browse and book campers for unforgettable trips.
 - React
 - React Router
 - mockapi.io
-- SCSS for styling
+- CSS for styling
