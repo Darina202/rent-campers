@@ -18,17 +18,15 @@ const CamperList = () => {
   }, [dispatch, page]);
 
   useEffect(() => {
-    if (page > Math.ceil(items?.length / 4)) {
-      console.log(page);
-      console.log(Math.ceil(items?.length / 4));
+    if (items.length % 4 !== 0 || items.length === 0) {
       setHiddenBtn(false);
     } else {
       setHiddenBtn(true);
     }
-  }, [page, items]);
+  }, [items]);
 
   const loadMore = () => {
-    setPage(page + 1);
+    setPage(prevPage => prevPage + 1);
   };
 
   const handleItemClick = id => {

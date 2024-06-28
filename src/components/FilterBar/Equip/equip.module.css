@@ -31,12 +31,13 @@
 }
 
 input:checked + .itemLabel {
-  border-color: var(--button);
+  border-color:var(--light-red);;
 }
 
 .itemLabel {
   display: flex;
   align-items: center;
+
   justify-content: center;
   flex-direction: column;
   gap: 8px;

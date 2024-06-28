@@ -10,12 +10,20 @@ const Reviews = ({ reviews }) => {
   const item = reviews.map(
     ({ reviewer_name, reviewer_rating, comment }, index) => {
       const ratingIcons = [];
-      for (let i = 0; i < reviewer_rating; i++) {
-        ratingIcons.push(
-          <svg key={i} className={styles.starIcon}>
-            <use href={`${icons}#icon-star`}></use>
-          </svg>
-        );
+      for (let i = 0; i < 5; i++) {
+        if (i < reviewer_rating) {
+          ratingIcons.push(
+            <svg key={`filled-${i}`} className={styles.starIcon}>
+              <use href={`${icons}#icon-star`}></use>
+            </svg>
+          );
+        } else {
+          ratingIcons.push(
+            <svg key={`empty-${i}`} className={styles.starIconEmpty}>
+              <use href={`${icons}#icon-star`}></use>
+            </svg>
+          );
+        }
       }
 
       return (

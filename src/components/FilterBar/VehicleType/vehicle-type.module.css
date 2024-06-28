@@ -31,16 +31,13 @@
   overflow: hidden;
 }
 
-input:checked + .itemLabel {
-  border-color: var(--button);
-}
-
 .itemLabel {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 8px;
+  text-align: center;
   height: 95px;
   font-weight: 500;
   line-height: 1.25;
@@ -50,6 +47,9 @@ input:checked + .itemLabel {
   padding: 0px 30px;
 }
 
+input:checked + .itemLabel {
+  border-color: var(--light-red);
+}
 .itemIcon {
   fill: transparent;
   stroke: var(--main);

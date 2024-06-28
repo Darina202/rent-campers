@@ -56,3 +56,9 @@
   height: 16px;
   fill: var(--rating);
 }
+
+.starIconEmpty {
+  width: 16px;
+  height: 16px;
+  fill: var(--block-features);
+}

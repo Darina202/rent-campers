@@ -5,6 +5,9 @@ import { selectCamperById } from '../../redux/campers/campers-selectors';
 import styles from './modal.module.css';
 import MainDesc from './MainDesc/MainDesc';
 import AddDesc from './AddDesc/AddDesc';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
+import PictureDesc from './PictureDesc/PictureDesc';
 
 Modal.setAppElement('#root');
 
@@ -28,7 +31,12 @@ const CamperModal = ({ isOpen, onRequestClose, camperId }) => {
         </svg>
       </button>
       <MainDesc camper={camper} />
-      <AddDesc camper={camper} />
+      <SimpleBar style={{ maxHeight: 510 }}>
+        <div style={{ overflowX: 'hidden' }}>
+          <PictureDesc camper={camper} />
+          <AddDesc camper={camper} />
+        </div>
+      </SimpleBar>
     </Modal>
   );
 };
