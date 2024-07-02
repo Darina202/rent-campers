@@ -1,8 +1,9 @@
 .container {
   display: flex;
   gap: 24px;
+  justify-content: space-between;
 }
 
 .leftSide {
-  width: calc((902px - 24px) / 2);
+  width: calc((100% - 24px) / 2);
 }

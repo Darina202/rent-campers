@@ -71,15 +71,42 @@ const BookingForm = () => {
             <use href={`${icons}#icon-calendar`}></use>
           </svg>
         </div>
+        {/* <div className={styles.wrapper}>
+          <div className={styles.dateWrapper}>
+            <Controller
+              name="date"
+              control={control}
+              render={({ field }) => (
+                <>
+                  <DatePicker
+                    {...field}
+                    selected={field.value}
+                    onChange={date => field.onChange(date)}
+                    minDate={today}
+                    dateFormat="dd.MM.yyyy"
+                    className={styles.input}
+                    placeholderText="Booking date"
+                    inline={isOpenDatePicker}
+                  />
+
+                  <svg className={styles.dateIcon} onClick={handleClick}>
+                    <use href={`${icons}#icon-calendar`}></use>
+                  </svg>
+                </>
+              )}
+            />
+          </div>
+          <p className={styles.error}>{errors.date?.message}</p>
+        </div> */}
         <div className={styles.field}>
-          <input
-            className={styles.input}
+          <textarea
+            className={styles.textarea}
             value={comment}
             type="text"
             name="comment"
             placeholder="Comment"
             onChange={handleChange}
-          />
+          ></textarea>
         </div>
         <button type="submit" className={styles.button}>
           Send

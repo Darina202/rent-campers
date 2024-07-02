@@ -1,5 +1,5 @@
 .booking {
-  width: calc((902px - 24px) / 2);
+  width: calc((100% - 24px - 48px) / 2);
   padding: 24px;
   border: 1px solid var(--border-line);
   border-radius: 10px;
@@ -40,7 +40,22 @@
   background-color: var(--inputs);
   border: transparent;
   border-radius: 10px;
+  font-size: 16px;
+
   padding: 18px 18px 18px 44px;
+}
+
+.textarea {
+  line-height: 1.25;
+  color: var(--main);
+  outline: transparent;
+  background-color: var(--inputs);
+  border: transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  padding: 18px 18px 23px 44px;
+  height: 114px;
 }
 
 .calIcon {
